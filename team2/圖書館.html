@@ -1,0 +1,96 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>圖書館不負責介紹</title>
+		<style type = "text/css">
+			body	  {
+						background-image: url("底圖2.jpg");
+					  }
+		</style>
+		
+	</head>
+
+	<body>
+		<center>
+			<br><br>
+			<img src = "圖書館..jpg" height="864" width="1152"><br><br><br><br>
+			<img src = "圖書館2樓.jpg">
+			<img src = "圖書館3樓.jpg"><br>
+			<img src = "圖書館4樓內.jpg">
+			<img src = "圖書館4樓外.jpg"><br><br><br><br><br><br><br>
+			<span style = "font-size: 200%">一樓是有一間位學習中心，簡單來說就是第三間電腦教室，另外還有一個空間是給各個社團發表成果展示的。<br><br><br>二樓的外面是借書處和幾台電腦，入口還有一個防盜磁門，所有的書想要帶出去都必須先在櫃台登記並消磁，<br>裡面也散布著幾台電腦，然後就是普通書籍的存放處，沙發和高級木桌椅可以讓你直接在裡面安靜的讀書。<br><br><br>三樓是一個採光微暗的地方，一個個比人還高的獨立書櫃放滿了更加專業、更加有學識的書籍，讓這裡充滿了神秘的氣息，<br>我曾經在這裡找到了一本很喜歡的偏向小說的經濟學書。<br><br><br>和一般外面死板板的圖書館不一樣，這裡集結了各種書籍，連新一代的漫畫、輕小說等年輕文作都收藏很多，<br>在靜靜的午後時光，躺在室內的沙發上，享受窗外撒下的熙熙陽光和空調的舒適，<br>搭配著賞心悅目的書籍和令人放鬆的書香，是個打發時間的好去處。<br><br><br>四樓是一個像視聽教室一樣座位高低型的會議廳，不定時會邀請到校外的專業人士來這裡舉辦講座，<br>外面則是空間很大的作品展示廳，也一樣不時的會展示很厲害的作品 !</span><br><br><br><br><br><br><br>
+			<a href = "%E4%B8%AD%E6%96%87%E7%89%88.html" style="text-decoration:none"><span style = "font-size: 400%">點擊我回到上一頁</span></a>
+		</center>
+		
+<script language="JavaScript">
+msg='不能說的秘密';
+msgSize=5;
+FoNt='Tahoma,Georgia'; 
+CoLoR='FF0000';
+speed=2;
+ns=(document.layers)?1:0;
+msg=msg.split(''),amount=msg.length,Y=0,X=0,ypos=0,xpos=0,ybase=new Array(),xbase=new Array();
+angle = new Array(),divTop= new Array(),divLeft=new Array();
+DocHeight=(document.layers)?window.innerHeight:window.document.body.offsetHeight;
+DocWidth=(document.layers)?window.innerWidth:window.document.body.offsetWidth;
+for (i=0; i < amount; i++){
+divTop[i]=Math.round(Math.random()*DocHeight);
+divLeft[i]=Math.round(Math.random()*DocWidth);
+}
+if (ns){
+for (i = 0; i < amount; i++)
+{document.write('<layer name=nsd'+i+' top=0 left=0 width='+msgSize+' height='+msgSize+'><font face='+FoNt+' size='+msgSize+' color='+CoLoR+'>'+msg[i]+'</font></layer>');}
+window.captureEvents(Event.MOUSEMOVE);
+function nsMouse(evnt){
+ypos = evnt.pageY-20;
+xpos = evnt.pageX-10;
+}
+window.onMouseMove = nsMouse;
+}
+else{
+document.write('<div id="hldr" style="position:absolute;top:0px;left:0px">')
+document.write('<div style="position:relative">')
+for (i=0; i < amount; i++)
+{document.write('<div id=ied style="position:absolute;top:0px;left:0px;width:'+msgSize+';height:'+msgSize+'"><font face='+FoNt+' size='+msgSize+' color='+CoLoR+'>'+msg[i]+'</font></div>')}
+document.write('</div></div>')
+function ieMouse(){
+ypos = event.y-20;
+xpos = event.x-10;
+}
+document.onmousemove = ieMouse;
+}
+function GoToMouse(){
+var DocHeight=(document.layers)?window.innerHeight:window.document.body.offsetHeight;
+var DocWidth=(document.layers)?window.innerWidth:window.document.body.offsetWidth;
+var iscrll=(document.all)?document.body.scrollTop:0;
+var nscrll=(document.layers)?window.pageYOffset:0;
+if (!ns)hldr.style.top=iscrll;
+for (i=0; i < amount; i++){
+Y = ypos - divTop[i];
+X = xpos - divLeft[i];
+angle[i] = Math.round(Math.atan2(Y,X) * 180/Math.PI);
+if (angle[i] < 0) angle[i] += 360;
+ybase[i]=Math.round(Math.random()*DocHeight);
+xbase[i]=Math.round(Math.random()*DocWidth);
+rep=Math.round(Math.random() * 3);
+extra=Math.round(Math.random() * 200)
+if (rep == 3)xbase[i] =-extra;
+if (rep == 2)xbase[i] =DocWidth+extra;
+if (rep == 1)ybase[i] =-extra;
+if (rep == 0)ybase[i] =DocHeight;
+y = Math.round(speed*Math.sin(angle[i]*Math.PI/180));
+x = Math.round(speed*Math.cos(angle[i]*Math.PI/180));
+divTop[i]+=y;
+divLeft[i]+=x;                                                                    
+if ((divLeft[i] > xpos-speed) && (divLeft[i] < xpos+speed/1.5) && (divTop[i] >= ypos-speed/1.5) && (divTop[i] <= ypos+speed/1.5))
+{divTop[i]=ybase[i]+nscrll;divLeft[i]=xbase[i]}
+var layer=(document.layers)?document.layers['nsd'+i]:ied[i].style;
+layer.top=divTop[i];layer.left=divLeft[i];
+}
+S=setTimeout('GoToMouse()',10);
+}
+window.onload=GoToMouse;
+</script>
+
+	</body>
+</html>

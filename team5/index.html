@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html style ="background-image:url(background.png);
+background-size: 73%;
+background-repeat: no-repeat;
+background-position: top;">
+	<head>
+		<meta charset="utf-8">
+		<title>基中便當系統</title>
+		<style type = "text/css">
+			input:hover{background-color:#00ffcc; }
+			input{color:#ff0000;}
+			form:hover{color:#884dff;}
+			.m1{position: absolute;left:23%;top:40%;width:540px;height:300px;}
+			.n1{position: absolute;left:23%;top:16.5%;width:180px;height:150px;}
+			.n2{position: absolute;left:40.6%;top:16.5%;width:180px;height:150px;}
+			.n3{position: absolute;left:57.8%;top:16.5%;width:183px;height:150px;}
+		</style>
+	</head>
+	<body>
+		<script>
+		function start()
+			{
+				var varRun1 = document.getElementById( "mainDish" );
+				var varRun2 = document.getElementById( "normalDish" );
+				var varRun3 = document.getElementById( "checked1" );
+				var varRun4 = document.getElementById( "checked2" );
+				var varRun5 = document.getElementById( "cal" );
+				varRun1.addEventListener( "click",display1, false );
+				varRun2.addEventListener( "click",display2, false );
+				varRun3.addEventListener( "click",display3, false );
+				varRun4.addEventListener( "click",display4, false );
+				varRun5.addEventListener( "click",display5, false );
+			}
+		function display1()
+			{
+				var run1 = document.getElementById( "run1" );
+				var run2 = document.getElementById( "run2" );
+				run1.setAttribute("style", "display:block");
+				run2.setAttribute("style", "display:none");
+				var a = "<form><p><input name ='mainDishItem' type = 'checkbox'>排骨飯</p><p><input name ='mainDishItem' type = 'checkbox'>雞捲飯</p><p><input name ='mainDishItem' type = 'checkbox'>雞排飯</p></form>"
+				run1.innerHTML = a;
+			}
+		function display2()
+			{
+				var run1 = document.getElementById( "run1" );
+				var run2 = document.getElementById( "run2" );
+				run1.setAttribute("style", "display:none");
+				run2.setAttribute("style", "display:block");
+				var a = "<form><p><input name ='normalDishItem' type = 'checkbox'>小黃瓜炒雞丁</p><p><input name ='normalDishItem' type = 'checkbox'>百頁豆腐炒芹菜</p><p><input name ='normalDishItem' type = 'checkbox'>炒竹筍</p><p><input name ='normalDishItem' type = 'checkbox'>炒高麗菜</p><p><input name ='normalDishItem' type = 'checkbox'>青椒炒蛋</p><p><input name ='normalDishItem' type = 'checkbox'>紅燒茄子</p><p><input name ='normalDishItem' type = 'checkbox'>清燙花椰菜</p><p><input name ='normalDishItem' type = 'checkbox'>甜不辣炒杏胞菇</p><p><input name ='normalDishItem' type = 'checkbox'>雪裡紅</p><p><input name ='normalDishItem' type = 'checkbox'>麻婆豆腐</p><p><input name ='normalDishItem' type = 'checkbox'>番茄炒蛋</p><p><input name ='normalDishItem' type = 'checkbox'>菜餔蛋</p><p><input name ='normalDishItem' type = 'checkbox'>蒸蛋</p><p><input name ='normalDishItem' type = 'checkbox'>螞蟻上樹</p></form>"
+				run2.innerHTML = a;	
+			}
+		function display3()
+			{
+				var i,j=0,k,mainPicture,f;
+				var	k = document.getElementById("mainPicture");
+				var obj1=document.getElementsByName("mainDishItem");
+				//how about getElementsById?
+				var len1 = obj1.length;
+				for (i = 0; i < len1; i++)
+				{
+					if (obj1[i].checked == true)
+					{
+						j++;
+					}
+				}
+				if(j==1)
+				{
+					for (k = 1; k < len1+1; k++)
+					{
+							if (obj1[k-1].checked == true)
+							{
+								mainPicture = document.getElementById( "picture" +k+"(2)" );
+								mainPicture.setAttribute( "src", k+"(2).jpg" );
+								mainPicture.setAttribute( "class","m1" );
+							}
+							else
+								f++;
+					}
+						k.innerHTML = mainPicture;
+				}
+				else
+				{
+					window.alert("只能勾一個ㄛ!");
+				}
+			}
+		function display4()
+			{
+				var i,j=0,x,z=1,normalPicture,f;
+				var	x = document.getElementById("normalPicture");
+				var obj1=document.getElementsByName("normalDishItem");
+				//how about getElementsById?
+				var len1 = obj1.length;
+				for (i = 0; i < len1; i++)
+				{
+					if (obj1[i].checked == true)
+					{
+						j++;
+					}
+				}
+				if(j==3)
+				{
+					for (x = 1; x < len1+1; x++)
+					{
+							if (obj1[x-1].checked == true)
+							{
+								normalPicture = document.getElementById( "picture" +x );
+								normalPicture.setAttribute( "src", x+".jpg" );
+								normalPicture.setAttribute( "class","n"+z );
+								z++;
+							}
+							else
+								f++;
+					}
+						x.innerHTML = normalPicture;
+				}
+				else
+				{
+					window.alert("只能勾三個ㄛ!");
+				}
+			}
+			function display5()
+				{
+					var run1 = document.getElementById( "run1" );
+					var run2 = document.getElementById( "run2" );
+					var run3 = document.getElementById( "run3" );
+					run1.setAttribute("style", "display:none");
+					run2.setAttribute("style", "display:none");
+					run3.setAttribute("style", "display:block");
+					var a = "<table border = '1' style = 'border-style:inset;border-color:#0000cc;position: absolute;left:82%;top:10%;font-family:monospace;font-size:15px;'><tr><td style = 'text-align: center;'>排骨飯:</td><td>250cal</td></tr><tr><td style = 'text-align: center;'>雞捲飯:</td><td>234cal</td></tr><tr><td style = 'text-align: center;'>雞排飯:</td><td>224cal</td></tr><tr><td style = 'text-align: center;'>小黃瓜炒雞丁:</td><td>68cal</td></tr><tr><td style = 'text-align: center;'>百頁豆腐炒芹菜:</td><td>215cal</td></tr><tr><td style = 'text-align: center;'>炒竹筍:</td><td>110cal</td></tr><tr><td style = 'text-align: center;'>炒高麗菜:</td><td>40cal</td></tr><tr><td style = 'text-align: center;'>青椒炒蛋:</td><td>137cal</td></tr><tr><td style = 'text-align: center;'>紅燒茄子:</td><td>69cal</td></tr><tr><td style = 'text-align: center;'>清燙花椰菜:</td><td>40cal</td></tr><tr><td style = 'text-align: center;'>甜不辣炒杏包菇:</td><td>86cal</td></tr><tr><td style = 'text-align: center;'>雪裡紅:</td><td>22cal</td></tr><tr><td style = 'text-align: center;'>麻婆豆腐:</td><td>249cal</td></tr><tr><td style = 'text-align: center;'>番茄炒蛋:</td><td>87cal</td></tr><tr><td style = 'text-align: center;'>菜餔蛋:</td><td>150cal</td></tr><tr><td style = 'text-align: center;'>蒸蛋:</td><td>110cal</td></tr></table>"
+					run3.innerHTML = a;	
+				}
+			window.addEventListener( "load", start, false );
+		</script>
+		<input id = "mainDish" type = "button" value = "主菜"style = "width:12ex;">
+		<input id = "normalDish" type = "button" value = "配菜"style = "width:12ex;">
+		<input id = "checked1" type = "button" value = "送出主菜"style = "position: absolute;left:12px;top:87%">			
+		<input id = "checked2" type = "button" value = "送出配菜"style = "position: absolute;left:6.25em;top:87%">
+		<input id = "cal" type = "button" value = "熱量表(100g)"style = "position: absolute;left:86%;">
+		<div id = "run1"></div>
+		<div id = "run2"></div>
+		<div id = "run3"></div>
+		<div id = "mainPicture"/>
+		<div id = "normalPicture"/>
+		<img id = "picture1" src = "blank.jpg">
+		<img id = "picture1(2)" src = "blank.jpg">
+		<img id = "picture2" src = "blank.jpg">
+		<img id = "picture2(2)" src = "blank.jpg">
+		<img id = "picture3" src = "blank.jpg">
+		<img id = "picture3(2)" src = "blank.jpg">
+		<img id = "picture4" src = "blank.jpg">
+		<img id = "picture5" src = "blank.jpg">
+		<img id = "picture6" src = "blank.jpg">
+		<img id = "picture7" src = "blank.jpg">
+		<img id = "picture8" src = "blank.jpg">
+		<img id = "picture9" src = "blank.jpg">
+		<img id = "picture10" src = "blank.jpg">
+		<img id = "picture11" src = "blank.jpg">
+		<img id = "picture12" src = "blank.jpg">
+		<img id = "picture13" src = "blank.jpg">
+		<img id = "picture14" src = "blank.jpg">
+		<img id = "picture15" src = "blank.jpg">
+		<img id = "picture16" src = "blank.jpg">
+		<img id = "picture17" src = "blank.jpg">
+	</body>
+</html>

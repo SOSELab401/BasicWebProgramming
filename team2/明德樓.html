@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>明德樓不負責介紹</title>
+		<style type = "text/css">
+			body	  {
+						background-image: url("底圖2.jpg");
+					  }
+		</style>
+		
+	</head>
+
+	<body>
+		<center>
+			<br><br>
+			<img src = "明德樓..jpg" height="864" width="1152"><br><br><br><br><br><br><br><br>
+			<span style = "font-size: 200%">和至善樓一樣是放普通教室的地方，如果入學的時候是進駐這邊，那下一次班教室通常就是升上三年級的時候了。<br><br><br>地板和莊敬樓有些地方一樣，還是水泥作的，而不是大理石，第一次看到的時候確實驚訝了一下。<br><br><br>比較特別的地方是樓下的廣場有一個不知道什麼時候會被斬頭的雕像，還有常常能在廁所裡面找到一根一根白色或是淺咖啡色的長條狀物。</span><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<a href = "%E4%B8%AD%E6%96%87%E7%89%88.html" style="text-decoration:none"><span style = "font-size: 400%">點擊我回到上一頁</span></a>
+		</center>
+		
+<script language="JavaScript">
+msg='不能說的秘密';
+msgSize=5;
+FoNt='Tahoma,Georgia'; 
+CoLoR='FF0000';
+speed=2;
+ns=(document.layers)?1:0;
+msg=msg.split(''),amount=msg.length,Y=0,X=0,ypos=0,xpos=0,ybase=new Array(),xbase=new Array();
+angle = new Array(),divTop= new Array(),divLeft=new Array();
+DocHeight=(document.layers)?window.innerHeight:window.document.body.offsetHeight;
+DocWidth=(document.layers)?window.innerWidth:window.document.body.offsetWidth;
+for (i=0; i < amount; i++){
+divTop[i]=Math.round(Math.random()*DocHeight);
+divLeft[i]=Math.round(Math.random()*DocWidth);
+}
+if (ns){
+for (i = 0; i < amount; i++)
+{document.write('<layer name=nsd'+i+' top=0 left=0 width='+msgSize+' height='+msgSize+'><font face='+FoNt+' size='+msgSize+' color='+CoLoR+'>'+msg[i]+'</font></layer>');}
+window.captureEvents(Event.MOUSEMOVE);
+function nsMouse(evnt){
+ypos = evnt.pageY-20;
+xpos = evnt.pageX-10;
+}
+window.onMouseMove = nsMouse;
+}
+else{
+document.write('<div id="hldr" style="position:absolute;top:0px;left:0px">')
+document.write('<div style="position:relative">')
+for (i=0; i < amount; i++)
+{document.write('<div id=ied style="position:absolute;top:0px;left:0px;width:'+msgSize+';height:'+msgSize+'"><font face='+FoNt+' size='+msgSize+' color='+CoLoR+'>'+msg[i]+'</font></div>')}
+document.write('</div></div>')
+function ieMouse(){
+ypos = event.y-20;
+xpos = event.x-10;
+}
+document.onmousemove = ieMouse;
+}
+function GoToMouse(){
+var DocHeight=(document.layers)?window.innerHeight:window.document.body.offsetHeight;
+var DocWidth=(document.layers)?window.innerWidth:window.document.body.offsetWidth;
+var iscrll=(document.all)?document.body.scrollTop:0;
+var nscrll=(document.layers)?window.pageYOffset:0;
+if (!ns)hldr.style.top=iscrll;
+for (i=0; i < amount; i++){
+Y = ypos - divTop[i];
+X = xpos - divLeft[i];
+angle[i] = Math.round(Math.atan2(Y,X) * 180/Math.PI);
+if (angle[i] < 0) angle[i] += 360;
+ybase[i]=Math.round(Math.random()*DocHeight);
+xbase[i]=Math.round(Math.random()*DocWidth);
+rep=Math.round(Math.random() * 3);
+extra=Math.round(Math.random() * 200)
+if (rep == 3)xbase[i] =-extra;
+if (rep == 2)xbase[i] =DocWidth+extra;
+if (rep == 1)ybase[i] =-extra;
+if (rep == 0)ybase[i] =DocHeight;
+y = Math.round(speed*Math.sin(angle[i]*Math.PI/180));
+x = Math.round(speed*Math.cos(angle[i]*Math.PI/180));
+divTop[i]+=y;
+divLeft[i]+=x;                                                                    
+if ((divLeft[i] > xpos-speed) && (divLeft[i] < xpos+speed/1.5) && (divTop[i] >= ypos-speed/1.5) && (divTop[i] <= ypos+speed/1.5))
+{divTop[i]=ybase[i]+nscrll;divLeft[i]=xbase[i]}
+var layer=(document.layers)?document.layers['nsd'+i]:ied[i].style;
+layer.top=divTop[i];layer.left=divLeft[i];
+}
+S=setTimeout('GoToMouse()',10);
+}
+window.onload=GoToMouse;
+</script>
+
+	</body>
+</html>

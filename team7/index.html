@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>基中</title>
+	  <style type=text/css>
+	  body   {
+			  background:url(櫻.gif)  center center fixed no-repeat;
+			  background-size:cover; 
+				}
+	  </style>
+	  
+	  <script>
+	 var rdmArray = [4];
+	 var question = ["基隆高中前身為「臺北州立基隆中學校」,是一所人才輩出的好學校,試問基隆高中最初成立於民國幾年?","1942年2月,一名臺籍畢業生呂燕卿攜帶紀念簽名簿到校,因有臺人於其封面寫下「FM」兩個英文字母,導致歧視臺人的日籍教師藤田向秘密警察呈報.參與簽名的臺籍學生和呂燕卿等人被拘留數日,並強制轉學至日本.試問「FM」代表何意?","1945年8月戰後,政府改建教育設施,翌年2月「臺北州立基隆中學校」改名為?","1946年5月4日,基隆中學學生因舉行紀念哪一運動的遊行而遭軍警阻擋與暴力鎮壓?","1947年9月,基隆中學第二任校長成立「中國共產黨基隆中學支部」,並發行地下刊物《光明報》發展共產勢力,後遭國防部保密局破獲,槍決了此校長及主要幹部7人,試問此校長是?","承上題,此事件被認為是當時臺灣白色恐怖時期的開端,此事件稱?","基中曾經因為大樓施工整修的吵雜聲和無欄杆的大樓群情激憤,進而引發近年在大規模的學生抗議事件,請問此事件是?","基隆高中曾擁有一棟和建國中學相同的建築,是日治時期的產物,極具紀念性,但後因道路拓寬而遭到拆除,甚是可惜,這棟建築叫做什麼?","每年12月底,基中都會舉行一場傳統的盛世活動,是基中的優良傳統表現,展現薪火傳承的精神,試問這是什麼活動?","這絕對送分題啦!請問基中活潑又帥氣且深受學生喜愛的校長是?"];
+	 var a1 = ["16年","臺灣人","臺灣省立基隆中學","五四運動","鍾浩東","基隆中學事件","紙飛機事件","紅樓","合作盃越野路跑","張智惟"];
+	 var a2 = ["14年","祕密結社","臺灣省立基隆高級中學","百合花運動","安心亞","霧社事件","甕仔雞事件","青樓","合作盃越野跑酷","耿連義"];
+	 var a3 = ["12年","廣播電台","國立基隆中學","健康多運動","打東東","二二八事件","造飛機事件","危樓","不合作盃越野路跑","連耿義"];
+	 var a4 = ["18年","日本人","臺北二中","白話文運動","吳劍青","$299一件","紙飛鏢事件","跳樓","合作盃越野跑路","義耿連"];
+	 var count=0;
+	 var count2=0;
+	 var corcount=0;
+	 
+	 function start()
+	 {
+		document.getElementById("title").addEventListener("click",sp);
+	 } 
+	 function sp()
+	 {
+	 
+	    document.getElementById("title").innerHTML ="";
+		getRandomArray();
+		document.getElementById("qu").innerHTML =question[count2];
+		document.getElementById("a1").innerHTML =sp2(rdmArray[0],count);
+		document.getElementById("a2").innerHTML =sp2(rdmArray[1],count);
+		document.getElementById("a3").innerHTML =sp2(rdmArray[2],count);
+		document.getElementById("a4").innerHTML =sp2(rdmArray[3],count);
+		count++;
+		count2++;
+		if (count2 == 11)
+		{
+		end();
+		}
+		else
+		rdmArray=[];
+		return;
+	 }
+	 function sp2(y,z)
+	 {
+	 if(y==0)
+	 {return a1[z];}
+	 else if(y==1)
+	 {return a2[z];}
+	 else if(y==2)
+	 {return a3[z];}
+	 else if(y==3)
+	 {return a4[z];}
+	 }
+	 function getRandomArray() {
+
+ 
+	for(var i=0; i<4; i++) {
+		var rdm = 0;
+ 
+		do {
+			var exist = false;
+			rdm = getRandom();
+			if(rdmArray.indexOf(rdm) != -1) exist = true;
+ 
+		} while (exist);
+ 
+		rdmArray[i] = rdm;
+	}
+	}
+	 function getRandom() {	
+		return Math.floor( Math.random() * 4);
+	}
+	function end()
+	{
+	document.getElementById("qu").innerHTML ="End.<br>得分:"+corcount;
+	document.getElementById("a1").innerHTML ="";
+	document.getElementById("a2").innerHTML ="";
+	document.getElementById("a3").innerHTML ="";
+	document.getElementById("a4").innerHTML ="";
+	}
+	function ss(x)
+	{
+	var ans=document.getElementById("a"+x).innerHTML;
+
+	if(ans==a1[count-1])
+	{corcount+=10;}
+	document.getElementById("title").innerHTML ="";
+	getRandomArray();
+	document.getElementById("qu").innerHTML =question[count2];
+	document.getElementById("a1").innerHTML =sp2(rdmArray[0],count);
+	document.getElementById("a2").innerHTML =sp2(rdmArray[1],count);
+	document.getElementById("a3").innerHTML =sp2(rdmArray[2],count);
+	document.getElementById("a4").innerHTML =sp2(rdmArray[3],count);
+	count++;
+	count2++;
+	if (count2 == 11)
+	{
+	end();
+	}
+	else
+	rdmArray=[];
+	return;
+	}
+	 window.addEventListener("load", start, false);
+	  </script>
+   </head>
+   
+   <body id="a">
+   <font color="yellow"; size="10";  face="fantasy	" ><p id="title"; align="center">歡迎各位朋友蒞臨國立基隆高中<br>今天,是基隆高中歡慶90周年的日子!<br>來到這塊人文薈萃寶地的你<br>怎能不知由九十年歲月編織出的基中歷史?<br>優質學校 優質環境 培育優質的群英<br>好學校 不推嗎?<br>接下來十題問答將翻開基中的源遠流長<br>準備好就開始回答吧!<br><br><strong><u><em>點擊文字以開始歷史問答</em></u></strong></p></font>
+   <font color='yellow'; size=''; ><p align='center'><div id="qu" style='font-family:Cursive;font-size:2em;width:90%;text-align:center;'></div></p></font>;
+   <font color='#FAFAFA'; size='6'; face='Cursive'; ><p align='center'><a href="javascript:ss(1)" id="a1"></a></p></font>";
+   <font color='#FAFAFA'; size='6'; face='Cursive'; ><p align='center'><a href="javascript:ss(2)" id="a2"></a></p></font>";
+   <font color='#FAFAFA'; size='6'; face='Cursive'; ><p align='center'><a href="javascript:ss(3)" id="a3"></a></p></font>";
+   <font color='#FAFAFA'; size='6'; face='Cursive'; ><p align='center'><a href="javascript:ss(4)" id="a4"></a></p></font>";
+   </body>
+</html>

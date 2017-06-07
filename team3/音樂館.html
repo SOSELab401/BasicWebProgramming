@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>音樂館</title>
+    <style>
+        img {
+            float: right;
+        }
+
+        header {
+            background-color: SkyBlue;
+            text-align: center;
+            font-family: 微軟正黑體;
+            padding: .2em;
+        }
+
+        body {
+            background: url(20612.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            color: black;
+        }
+
+        p {
+            font-family: 微軟正黑體;
+        }
+
+        .word {
+            color: red;
+        }
+
+        a:link {
+            color: white;
+        }
+
+        A:visited {
+            color: white;
+        }
+    </style>
+</head>
+<header>
+    <h1>音樂館</h1>
+</header>
+
+<body>
+    <p>
+        <h1><span class="word">音樂館</span>，新建工程於民國91年1月完工</h1>
+    </p>
+    <p>
+        <h2>請觀看下方的實習音樂會的片段影片，於民國102年12月26日的音樂館所舉辦</h2>
+    </p>
+
+    <div id="dp"></div>
+    <script>
+        i = 0;
+        HtmlStr = new Array();
+        HtmlStr[0] = '<img src="a-.jpeg">;2000';
+        HtmlStr[1] = '<img src="a.jpeg">;2000';
+        HtmlStr[2] = '<img src="b.jpeg">;2000';
+        HtmlStr[3] = '<img src="c.jpeg">;2000';
+        HtmlStr[4] = '<img src="d.jpeg">;2000';
+        HtmlStr[5] = '<img src="e.jpeg">;2000';
+        HtmlStr[6] = '<img src="f.jpeg">;2000';
+        HtmlStr[7] = '<img src="g.jpeg">;2000';
+        HtmlStr[8] = '<img src="h.jpeg">;2000';
+        HtmlStr[9] = '<img src="i.jpeg">;2000';
+        HtmlStr[10] = '<img src="j.jpeg">;2000';
+        HtmlStr[11] = '<img src="k.jpeg">;2000';
+        HtmlStr[12] = '<img src="l.jpeg">;2000';
+        HtmlStr[13] = '<img src="m.jpeg">;2000';
+        HtmlStr[14] = '<img src="n.jpeg">;2000';
+        HtmlStr[15] = '<img src="o.jpeg">;2000';
+        HtmlStr[16] = '<img src="p.jpeg">;2000';
+        HtmlStr[17] = '<img src="q.jpeg">;2000';
+        HtmlStr[18] = '<img src="r.jpeg">;2000';
+        HtmlStr[19] = '<img src="s.jpeg">;2000';
+        HtmlStr[20] = '<img src="t.jpeg">;2000';
+        HtmlStr[21] = '<img src="u.jpeg">;2000';
+        HtmlStr[22] = '<img src="v.jpeg">;2000';
+        HtmlStr[23] = '<img src="w.jpeg">;2000';
+        HtmlStr[24] = '<img src="x.jpeg">;2000';
+        HtmlStr[25] = '<img src="y.jpeg">;2000';
+        HtmlStr[26] = '<img src="z.jpeg">;2000';
+        HtmlStr[27] = '<img src="aa.jpeg">;2000';
+        HtmlStr[28] = '<img src="bb.jpeg">;2000';
+        Max = HtmlStr.length - 1;
+
+        function star(Str) {
+            dp.innerHTML = Str;
+            if (i < Max)
+                i++;
+            else
+                i = 0;
+            ToStop();
+        }
+
+        function ToPlay() {
+            StrTmpe = HtmlStr[i].split(";");
+            timeout = setTimeout("star(StrTmpe[0])", StrTmpe[1])
+        }
+
+        function ToStop() {
+            clearTimeout(timeout);
+            ToPlay();
+        }
+        ToPlay();
+    </script>
+    <iframe width="600" height="400" src="https://www.youtube.com/embed/lKn_0bX18wo" frameborder="0" allowfullscreen></iframe>
+    <p>
+        <h2><a href="https://www.youtube.com/watch?v=lKn_0bX18wo">影片引用自此</a></h2>
+    </p>
+    <p>
+        <h2>右方共有28張圖片，皆是民國105年12月15日所舉辦的實習音樂會的圖片</h2>
+    </p>
+    <p>
+        <h2><a href="https://www.facebook.com/KLSHFANS/photos/pcb.1318192781553650/1318192204887041/?type=3">圖片引用自此</a></h2>
+    </p>
+    <p>
+        <h2><a href="羊舍.html">點擊至羊舍</a></h2>
+    </p>
+    <p>
+        <h2><a href="校園.html">返回至「校園」</a></h2>
+    </p>
+    <hr>
+</body>
+
+</html>

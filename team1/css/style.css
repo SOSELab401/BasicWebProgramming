@@ -1,0 +1,77 @@
+
+ 
+*{ font-family:微軟正黑體;}
+
+.boxWrap{
+	width: 240px;	
+	-webkit-transition:margin-top .5s ease-out;   /*use for google chrome*/
+}
+.boxWrap:hover{ margin-top:-179px;}
+.boxWrap h1{ font-size:40px; color:black;}
+
+.mask1{ height:183px; overflow:hidden; border:double 10px saddlebrown ;  position:fixed; top:750px; left:300px;}/*margin(與邊界距離):上右下左*/
+.box1, .box2{  background-color:mistyrose; height:183px;}
+.box2{ margin-top: -27px; position:relative;}
+.box2 a{ position:absolute; left:70px; bottom:10px; color:#FFF;  border: solid 1px #69F; background-color:skyblue; border-radius:3px; width:100px; height:25px; text-align:center;}
+
+
+.mask2{ height:183px; overflow:hidden; border:double 10px saddlebrown ;  position:fixed; top:750px; left:550px; }/*margin(與邊界距離):上右下左*/
+.box3, .box4{  background-color:navajowhite; height:183px;}
+.box4{ margin-top: -27px; position:relative;}
+.box4 a{ position:absolute; left:70px; bottom:10px; color:#FFF;  border: solid 1px #69F; background-color:skyblue; border-radius:3px; width:100px; height:25px; text-align:center;}
+
+
+.mask3{ height:183px; overflow:hidden; border:double 10px saddlebrown;  position:fixed; top:750px; left:800px; }/*margin(與邊界距離):上右下左*/
+.box5, .box6{  background-color:mintcream; height:183px;}
+.box6{ margin-top: -27px; position:relative;}
+.box6 a{ position:absolute; left:70px; bottom:10px; color:#FFF;  border: solid 1px #69F; background-color:skyblue; border-radius:3px; width:100px; height:25px; text-align:center;}
+
+
+.mask4{ height:183px; overflow:hidden; border:double 10px saddlebrown;  position:fixed; top:750px; left:1050px; }/*margin(與邊界距離):上右下左*/
+.box7, .box8{  background-color:palegreen; height:183px;}
+.box8{ margin-top: -27px; position:relative;}
+.box8 a{ position:absolute; left:70px; bottom:10px; color:#FFF;  border: solid 1px #69F; background-color:skyblue; border-radius:3px; width:100px; height:25px; text-align:center;}
+
+
+.mask5{ height:183px; overflow:hidden; border:double 10px saddlebrown;  position:fixed; top:750px; left:1300px; }/*margin(與邊界距離):上右下左*/
+.box9, .box10{  background-color:paleturquoise; height:183px;}
+.box10{ margin-top: -27px; position:relative;}
+.box10 a{ position:absolute; left:70px; bottom:10px; color:#FFF;  border: solid 1px #69F; background-color:skyblue; border-radius:3px; width:100px; height:25px; text-align:center;}
+
+
+
+                                                                    /*以上為轉場動畫的5個區塊*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

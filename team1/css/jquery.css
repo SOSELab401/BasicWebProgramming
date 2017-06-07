@@ -1,0 +1,96 @@
+#panel {
+	position:fixed;
+	top:100px;
+	left:0px;
+	width:1900px;
+	height:300px;
+    padding: 5px;
+    text-align: center;
+    color: white;  
+	padding: 50px;
+    display: none;
+	font-size:250px;
+	font-family:fantasy;
+	
+}/*點擊標題後浮現的區塊*/
+
+ #flip{
+	position:fixed;
+	top:0px;
+	left:650px;
+	width:700px;
+	height:100px;
+    padding: 5px;
+    text-align: center;
+    color: lightgray;
+	font-size:70px;
+	
+}/*標題的區塊*/
+
+ #div1{width:180px;
+       height:180px;
+       background-color:red;
+	   display:none;
+	   position:fixed;
+       left:1650px;
+       top:150px;
+	   text-align: center;
+	   font-size:120px;
+	   }                   /*H*/
+	  
+	  
+ #div2{width:180px;
+       height:180px;
+       background-color:green;
+	   display:none;
+	   position:fixed;
+       left:1650px;
+       top:350px;
+	   text-align: center;
+	   font-size:120px;    }/*E*/
+	   
+ #div3{width:180px;
+      height:180px;
+      background-color:blue; 
+	  display:none;
+	  position:fixed;
+      left:1650px;
+      top:550px;
+	  text-align: center;
+	  font-size:120px;
+     	  }                /*L*/
+		  
+ #div4{width:180px;
+      height:180px;
+      background-color:pink; 
+	  display:none;
+	  position:fixed;
+      left:1650px;
+      top:750px;
+      text-align: center;
+	  font-size:120px;  }	/*L*/  
+		  
+ #div5{width:180px;
+      height:180px;
+      background-color:orange; 
+	  display:none;
+	  position:fixed;
+      left:1650px;
+      top:950px;
+      text-align: center;
+	  font-size:120px;  }	  /*O*/  
+		  	  
+ #divbutton{background-color:black;
+            color:white;
+			width:165px;
+            height:35px;		
+	        position:fixed;
+            left:1650px;
+            top:100px;
+            		}        /*open/close*/ 
+	  
+	  
+	  
+	  
+	  
+	  

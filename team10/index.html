@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!-- Fig. 10.3: InitArray.html -->
+<!-- Web page for showing the results of initializing arrays. -->
+<html>
+   <head>
+    <meta charset = "utf-8">
+    <title>基中星級區域</title>
+	<style>
+	body   {
+			background:url("主棟.png") no-repeat;
+			background-size:cover;
+			}
+	p		{
+			font-family: 微軟正黑體;
+			color: purple;
+			position: absolute;
+			font-size: 7em;
+			left:30%; top:20%;
+			}
+	.first {
+			font-family: 微軟正黑體;
+			color: yellow;
+			position: absolute;
+			font-size: 5em;
+			left:40%; top:60%;
+			text-decoration:none;
+			}
+	.first:hover {
+			background-color: darkgray;
+			}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+    $(".first").click(function(){
+        $("strong").hide();
+		$(document.body).css("background", "url('空拍.jpg') no-repeat");
+		$(".back").show();
+		$(".leave").show();
+		$(".leave").click(function(){window.close();});
+		$(".back").click(function(){location.reload();});
+	});});
+	</script>
+   </head>
+   <body>
+   <p><strong>基中星級區域</strong></p>
+   <a class = "first"><strong>
+   點擊進入
+   </strong></a>
+   <a class = "back" style = "display:none;">回首頁</a>
+   <a class = "leave" style = "position:absolute;left:96%;display:none;">離開視窗</a>
+   </body>
+</html>

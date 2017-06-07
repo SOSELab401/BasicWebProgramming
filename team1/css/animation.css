@@ -1,0 +1,83 @@
+  .c{
+	    font-size:40px;
+		border-radius:100px;
+	    text-align:center;
+	    }  
+
+ 
+
+#a1 {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    position: fixed;
+	    
+   animation-name: example;
+    animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-delay: 0s;
+    animation-timing-function: linear;	
+}    /*animation "基"*/
+
+
+#a2 { width: 60px;
+    height: 60px;
+    background-color: white;
+    position: fixed;
+	    
+   animation-name: example;
+    animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-delay: 0.5s;
+animation-timing-function:linear ;
+}    /*animation "隆" */
+
+
+
+#a3 { width: 60px;
+    height: 60px;
+    background-color: white;
+    position: fixed;
+	    
+   animation-name: example;
+    animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-delay: 1s;
+animation-timing-function:linear ;
+}     /*animation "風" */
+
+
+#a4 { width: 60px;
+    height: 60px;
+    background-color: white;
+    position: fixed;
+	    
+   animation-name: example;
+    animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-delay: 1.5s;
+animation-timing-function:linear ;
+}   /*animation "景" */
+
+
+#a5 { width: 60px;
+    height: 60px;
+    background-color: white;
+    position:fixed;
+	    
+   animation-name: example;
+    animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-delay: 2s;
+animation-timing-function:linear ;
+}   /*animation "區" */
+
+
+@keyframes example {
+    0%   {background-color:navajowhite; left:240px; top:690px;}
+    25%  {background-color:gold;        left:1600px; top:690px;}
+    50%  {background-color:mistyrose;   left:1600px; top:1150px;}
+    75%  {background-color:plum;        left:240px; top:1150px;}
+    100% {background-color:lightcyan;   left:240px; top:690px;}
+}
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>羊舍</title>
+    <style>
+        img {
+         
+        }
+
+        header {
+            background-color: SkyBlue;
+            text-align: center;
+            font-family: 微軟正黑體;
+            padding: .2em;
+        }
+
+        body {
+            background: url(20612.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            color:black;
+        }
+
+        p {
+            font-family: 微軟正黑體;
+        }
+
+        .word {
+            color: red;
+        }
+
+        a:link {
+            color: white;
+        }
+
+        A:visited {
+            color: white;
+        }
+    </style>
+</head>
+<header>
+    <h1>羊舍</h1>
+</header>
+
+<body>
+    <p>
+        <h1><span class="word">羊舍</span>，新建工程於民國2016年11月完工</h1>
+    </p>
+    
+
+    <div id="dp"></div>
+    <script>
+        i = 0;
+        HtmlStr = new Array();
+        HtmlStr[0] = '<img src="羊1.jpg" width="600" height="400">;2000';
+        HtmlStr[1] = '<img src="羊2.jpg" width="600" height="400">;2000';
+        HtmlStr[2] = '<img src="羊11.jpg" width="600" height="400">;2000';
+        HtmlStr[3] = '<img src="羊4.jpg" width="600" height="400">;2000';
+        HtmlStr[4] = '<img src="羊5.jpg" width="600" height="400">;2000';
+        HtmlStr[5] = '<img src="羊6.jpg" width="600" height="400">;2000';
+        HtmlStr[6] = '<img src="羊7.jpg" width="600" height="400">;2000';
+        HtmlStr[7] = '<img src="羊8.jpg" width="600" height="400">;2000';
+        HtmlStr[8] = '<img src="羊9.jpg" width="600" height="400">;2000';
+        HtmlStr[9] = '<img src="羊10.jpg" width="600" height="400">;2000';
+        Max = HtmlStr.length - 1;
+
+        function star(Str) {
+            dp.innerHTML = Str;
+            if (i < Max)
+                i++;
+            else
+                i = 0;
+            ToStop();
+        }
+
+        function ToPlay() {
+            StrTmpe = HtmlStr[i].split(";");
+            timeout = setTimeout("star(StrTmpe[0])", StrTmpe[1])
+        }
+
+        function ToStop() {
+            clearTimeout(timeout);
+            ToPlay();
+        }
+        ToPlay();
+    </script>
+	<p>
+        <h2>請觀看下方的新聞</h2>
+    </p>
+    <p>
+        <h2><a href="http://www.klcatv.com.tw/zh_TW/localnews_content/id/48946">新聞</a></h2>
+    </p>
+    <p>
+        <h2>右方共有7張圖片，皆是民國106年4月所拍攝的圖片</h2>
+    </p>
+    <p>
+        <h2>圖片是自行拍攝的</a></h2>
+    </p>
+	<p>
+        <h2><a href="音樂館.html">點擊至音樂館</a></h2>
+    </p>
+	<p>
+        <h2><a href="校園.html">返回至「校園」</a></h2>
+    </p>
+    <hr>
+</body>
+
+</html>

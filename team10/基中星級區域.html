@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<!-- Fig. 10.3: InitArray.html -->
+<!-- Web page for showing the results of initializing arrays. -->
+<html>
+   <head>
+    <meta charset = "utf-8">
+    <title>基中星級區域</title>
+	<style>
+	body   {
+			background:url("主棟.png") no-repeat;
+			background-size:cover;
+			}
+	.title		{
+			font-family: 微軟正黑體;
+			color: purple;
+			font-size: 7em;
+			text-align:center;
+			}
+	.first {
+			font-family: 微軟正黑體;
+			color: yellow;
+			font-size: 5em;
+			text-align:center;
+			}
+	.first:hover{
+			color:darkgray;
+			}
+	img     {
+			position:absolute;
+			display:none;
+			}
+	#in		{
+	        font-family: 微軟正黑體;
+			color: red;
+			position:absolute;
+			left:650px;
+			top:1px;
+			display:none;
+			font-size: 5em;
+			}
+	#intro	{
+	        font-family: 微軟正黑體;
+			color: lightblue;
+			position:absolute;
+			left:650px;
+			top:201px;
+			display:none;
+			font-size: 5em;
+			}
+	#intro2	{
+	        font-family: 微軟正黑體;
+			position:absolute;
+			left:650px;
+			top:201px;
+			display:none;
+			font-size: 1em;
+			}
+	.com	{
+			position:absolute;
+			top:400px;
+			display:none;
+			font-size: 5em;
+			font-family: 微軟正黑體;
+			}
+	#flip 	{
+			position:absolute;
+			display:none;
+			font-size: 2em;
+			top:375px;
+			font-family: 微軟正黑體;
+			}
+	#flip:hover	{
+				color:purple;
+				}
+	#back	{
+			position:absolute;
+			top:1px;
+			left:1px;
+			display:none;
+			font-family: 微軟正黑體;
+			}
+	#leave	{
+			position:absolute;
+			top:1px;
+			right:1px;
+			display:none;
+			font-family: 微軟正黑體;
+			}
+	
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script>
+	
+	$(document).ready(function(){
+	var T = ["體育館","體適能場","音樂館","科學館","操場","莊敬樓與至善樓","明德樓","圖書館","群英樓與宿舍","源遠樓","弘道樓","大門與花圃","活動中心"];
+	var I = ["高級的溫水泳池和專業的救生員，讓您有種身於五星級泳池的享受。<br>淋浴間同學們的歌唱聲，更是基中人才有的青澀時光啊！<br>樓上球場的木質地板與旋轉樓梯的設計更是特色之一。","雖設施已老舊無人使用，但自從兩隻淘氣的小羊加入基中後，此地成了牠們活動的好空間，<br>四處的花花草草也有著難見的小小生命呢!","音樂班的學生們都在此上課，是基中音樂菁英們匯集的藝術殿堂。<br>即使室內的演藝廳並非大型演出空間，一場場美妙的音樂饗宴仍緊緊抓著眾人的心。","校園裡最寧靜的地方，更是理科學生心中的桃花源。<br>於此的科學新知與設備象徵著學生對於自然科學的喜好。<br>這裡有著有趣的天文望遠鏡、顯微鏡、打點計時器…，還有著學生們最熱愛的資訊課程呢!","身為校園中第二熱鬧的場地（怎麼能敵的過第一的福利社呢？），<br>三對三的鬥牛賽相信是每位深愛籃球的學生最難以忘懷的高中時光吧！<br>除此之外，還有相對溫和的排球場地讓您大展身手喔！","基中的體育菁英都藏於此，鄰近操場的位置更是省去體育班同學前往操場訓練的時間。<br>活潑熱情的至善樓同學有著絕佳的地理位置優勢搶得佔框的先機，晚來的同學只能摸摸鼻子乖乖報隊了。","緊鄰著學生們最愛的合作社，具有絕佳的的地理位置優勢，擁有購買便當的地利之便！","飽含了人類文明的歷史與學術，涵養著人文與科學的甘泉，滋潤著每一位求知若渴的你。","全基中最宏偉的建築，可眺遠山，矗立在校園裡的中心，廣納群英於此地。<br>宿舍則提供著每位通勤上學的同學與老師們一個安心的棲身之所。","雖稍嫌老舊，不過即使是時間的消磨或記憶的侵蝕，<br>仍無損校史館的光輝與榮耀，記錄著每位校友的豐功偉業。","五樓為美術班的所在地，是學校中頗新的一棟樓。<br>新潮的外觀顯出與眾不同的美感，也是基中校園裡除了音樂館外的另一座藝術殿堂。","氣勢磅礡又闊氣的大門一日又一日的刻劃著基中的歷史，在多少日子裡一同見證著基中的輝煌與榮耀！<br>生意盎然的花圃，總是給人驚喜，麻雀、喜鵲、白鷺鷥都是這兒的常客，可別錯過這群嬌客的身影喔～","可曾聽聞過基中響徹雲霄的羽球隊?這裡正是他們平時練球的場地喔!<br>地下一樓的桌球也是學生們熱愛的運動，都多虧了這樣設計良好的場地，才得以享受如此高品質的打球環境。"];
+	var i = document.getElementById("in");
+	var j = document.getElementById("intro2");
+	var k = document.getElementById("star");
+	var l ="";
+	$(".first").mouseenter(function(){$(this).animate({width:'+=10px'});});
+	$(".first").mouseleave(function(){$(this).animate({width:'-=10px'});});
+    $(".first").click(function(){
+        $("strong").hide();
+		$(document.body).css("background", "none");
+		$("#back").show(1000);
+		$("img").show(1000);
+		$("#leave").show(1000);
+		$("#in").show(1000);
+		$("#intro").show(1000);
+		$(".com").show(1000);
+		$("#flip").show(1000);
+		$(".1").click(function(){document.getElementById("ran").innerHTML="";$("#intro").hide();$("#intro2").show();i.innerHTML=T[0];j.innerHTML=I[0];$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".m4").attr("src","白.jpg");$(".m5").attr("src","白.jpg");$(".pic").attr("src","體育館2.png");});
+		$(".1").mouseenter(function(){$(".1").animate({left:'90px',top:'0px',width: '+=10px'});});
+		$(".1").mouseleave(function(){$(".1").animate({left:'100px',top:'1px',width: '-=10px'});});
+		$(".2").click(function(){document.getElementById("ran").innerHTML="";$("#intro").hide();$("#intro2").show();i.innerHTML=T[1];j.innerHTML=I[1];$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","白.jpg");$(".m4").attr("src","白.jpg");$(".m5").attr("src","白.jpg");$(".pic").attr("src","羊舍.png");});
+		$(".2").mouseenter(function(){$(".2").animate({left:'323px',top:'0px',width: '+=10px'});});
+		$(".2").mouseleave(function(){$(".2").animate({left:'333px',top:'1px',width: '-=10px'});});
+		$(".3").click(function(){document.getElementById("ran").innerHTML="";$("#intro").hide();$("#intro2").show();i.innerHTML=T[2];j.innerHTML=I[2];$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".m4").attr("src","星級.jpg");$(".m5").attr("src","星級.jpg");$(".pic").attr("src","音樂.jpg");});
+		$(".3").mouseenter(function(){$(".3").animate({left:'462px',top:'0px',width: '+=10px'});});
+		$(".3").mouseleave(function(){$(".3").animate({left:'472px',top:'0px',width: '-=10px'});});
+		$(".4").click(function(){document.getElementById("ran").innerHTML="";$("#intro").hide();$("#intro2").show();i.innerHTML=T[3];j.innerHTML=I[3];$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".m4").attr("src","白.jpg");$(".m5").attr("src","白.jpg");$(".pic").attr("src","科學.png");});
+		$(".4").mouseenter(function(){$(".4").animate({left:'90px',top:'65px',width: '+=10px'});});
+		$(".4").mouseleave(function(){$(".4").animate({left:'100px',top:'75px',width: '-=10px'});});
+		$(".5").click(function(){document.getElementById("ran").innerHTML="";$("#intro").hide();$("#intro2").show();i.innerHTML=T[4];j.innerHTML=I[4];$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".m4").attr("src","星級.jpg");$(".m5").attr("src","星級.jpg");$(".pic").attr("src","操場.png");});
+		$(".5").mouseenter(function(){$(".5").animate({left:'193px',top:'65px',width: '+=10px'});});
+		$(".5").mouseleave(function(){$(".5").animate({left:'203px',top:'75px',width: '-=10px'});});
+		$(".6").click(function(){document.getElementById("ran").innerHTML="";$("#intro").hide();$("#intro2").show();i.innerHTML=T[5];j.innerHTML=I[5];$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".m4").attr("src","星級.jpg");$(".m5").attr("src","白.jpg");$(".pic").attr("src","莊敬.png");});
+		$(".6").mouseenter(function(){$(".6").animate({left:'456px',top:'73px',width: '+=10px'});});
+		$(".6").mouseleave(function(){$(".6").animate({left:'466px',top:'83px',width: '-=10px'});});
+		$(".7").click(function(){document.getElementById("ran").innerHTML="";$("#intro").hide();$("#intro2").show();i.innerHTML=T[6];j.innerHTML=I[6];$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".m4").attr("src","白.jpg");$(".m5").attr("src","白.jpg");$(".pic").attr("src","明德.png");});
+		$(".7").mouseenter(function(){$(".7").animate({left:'90px',top:'174px',width: '+=10px'});});
+		$(".7").mouseleave(function(){$(".7").animate({left:'100px',top:'184px',width: '-=10px'});});
+		$(".8").click(function(){document.getElementById("ran").innerHTML="";$("#intro").hide();$("#intro2").show();i.innerHTML=T[7];j.innerHTML=I[7];$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".m4").attr("src","星級.jpg");$(".m5").attr("src","白.jpg");$(".pic").attr("src","圖書.png");});
+		$(".8").mouseenter(function(){$(".8").animate({left:'138px',top:'174px',width: '+=10px'});});
+		$(".8").mouseleave(function(){$(".8").animate({left:'148px',top:'184px',width: '-=10px'});});
+		$(".9").click(function(){document.getElementById("ran").innerHTML="";$("#intro").hide();$("#intro2").show();i.innerHTML=T[8];j.innerHTML=I[8];$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".m4").attr("src","星級.jpg");$(".m5").attr("src","白.jpg");$(".pic").attr("src","群英.png");});
+		$(".9").mouseenter(function(){$(".9").animate({left:'231px',top:'173px',width: '+=10px'});});
+		$(".9").mouseleave(function(){$(".9").animate({left:'241px',top:'183px',width: '-=10px'});});
+		$(".10").click(function(){document.getElementById("ran").innerHTML="";$("#intro").hide();$("#intro2").show();i.innerHTML=T[9];j.innerHTML=I[9];$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","白.jpg");$(".m4").attr("src","白.jpg");$(".m5").attr("src","白.jpg");$(".pic").attr("src","源遠.png");});
+		$(".10").mouseenter(function(){$(".10").animate({left:'551px',top:'176px',width: '+=10px'});});
+		$(".10").mouseleave(function(){$(".10").animate({left:'561px',top:'186px',width: '-=10px'});});
+		$(".11").click(function(){document.getElementById("ran").innerHTML="";$("#intro").hide();$("#intro2").show();i.innerHTML=T[10];j.innerHTML=I[10];$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".m4").attr("src","星級.jpg");$(".m5").attr("src","星級.jpg");$(".pic").attr("src","弘道.png");});
+		$(".11").mouseenter(function(){$(".11").animate({left:'138px',top:'270px',width: '+=10px'});});
+		$(".11").mouseleave(function(){$(".11").animate({left:'148px',top:'280px',width: '-=10px'});});
+		$(".12").click(function(){document.getElementById("ran").innerHTML="";$("#intro").hide();$("#intro2").show();i.innerHTML=T[11];j.innerHTML=I[11];$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".m4").attr("src","星級.jpg");$(".m5").attr("src","白.jpg");$(".pic").attr("src","大門2.png");});
+		$(".12").mouseenter(function(){$(".12").animate({left:'263px',top:'235px',width: '+=10px'});});
+		$(".12").mouseleave(function(){$(".12").animate({left:'273px',top:'245px',width: '-=10px'});});
+		$(".13").click(function(){document.getElementById("ran").innerHTML="";$("#intro").hide();$("#intro2").show();i.innerHTML=T[12];j.innerHTML=I[12];$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".m4").attr("src","星級.jpg");$(".m5").attr("src","白.jpg");$(".pic").attr("src","活動中心.png");});
+		$(".13").mouseenter(function(){$(".13").animate({left:'446px',top:'235px',width: '+=10px'});});
+		$(".13").mouseleave(function(){$(".13").animate({left:'456px',top:'245px',width: '-=10px'});});
+		$("#flip").click(function(){var a=Math.floor(Math.random()*13);$(".pic").attr("src","白.jpg");$("#intro").hide();$("#intro2").show();i.innerHTML=T[a];j.innerHTML=I[a];document.getElementById("ran").innerHTML="恭喜你抽到了"+T[a];if(a==2 || a==4 || a==10){$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".pic").attr("src","白.jpg");$(".m4").attr("src","星級.jpg");$(".m5").attr("src","星級.jpg");}else if(a==5 || a==7 || a==8 || a==11 || a==12){$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".m4").attr("src","星級.jpg");$(".m5").attr("src","白.jpg");}else if(a==0 || a==3 || a==6){$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","星級.jpg");$(".m4").attr("src","白.jpg");$(".m5").attr("src","白.jpg");}else{$(".m1").attr("src","星級.jpg");$(".m2").attr("src","星級.jpg");$(".m3").attr("src","白.jpg");$(".m4").attr("src","白.jpg");$(".m5").attr("src","白.jpg");}});
+		$("#leave").click(function(){window.close();});
+		$("#back").click(function(){location.reload();});
+	});});
+	</script>
+   </head>
+   <body>
+   <div id="back">回首頁</div>
+   <div id="leave">離開視窗</div>
+   <p class='title'><strong>基中星級區域</strong></p>
+   <p class='first'><strong>
+   點擊進入
+   </strong></p>
+   <img src='體育館.png'style='left:100px;top:1px;'class='1'>
+   <img src='體適能場.png'style='left:333px;top:1px;'class='2'>
+   <img src='音樂館.png'style='left:472px;top:1px;'class='3'><br>
+   <img src='科學館.png'style='left:100px;top:75px;'class='4'>
+   <img src='操場2.png'style='left:203px;top:75px;'class='5'>
+   <img src='莊敬至善.png'style='left:466px;top:83px;'class='6'><br>
+   <img src='明德樓.png'style='left:100px;top:184px;'class='7'>
+   <img src='圖書館.png'style='left:148px;top:184px;'class='8'>
+   <img src='群英樓.png'style='left:241px;top:183px;'class='9'>
+   <img src='源遠樓.png'style='left:561px;top:186px;'class='10'><br>
+   <img src='弘道樓.png'style='left:148px;top:280px;'class='11'>
+   <img src='大門.png'style='left:273px;top:245px;'class='12'>
+   <img src='活動中心2.png'style='left:456px;top:245px;'class='13'>
+   <div id='in'>點擊以查看地點</div>
+   <div id='intro'>點擊以查看簡介</div>
+   <div id='intro2'></div>
+   <div id="flip">隨機推薦</div>
+   <p class='com'>推薦等級:</p>
+   <img src='白.jpg'class='m1'style='position:absolute;left:50px;top:600px;width:100px;height:100px;'>
+   <img src='白.jpg'class='m2'style='position:absolute;left:150px;top:600px;width:100px;height:100px;'>
+   <img src='白.jpg'class='m3'style='position:absolute;left:250px;top:600px;width:100px;height:100px;'>
+   <img src='白.jpg'class='m4'style='position:absolute;left:350px;top:600px;width:100px;height:100px;'>
+   <img src='白.jpg'class='m5'style='position:absolute;left:450px;top:600px;width:100px;height:100px;'>
+   <img src='白.jpg'class='pic'style='position:absolute;left:650px;top:375px;width:400px;height:300px;'>
+   <div id='ran' style='position:absolute;left:650px;top:375px;'></div>
+   </body>
+</html>

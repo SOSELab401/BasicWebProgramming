@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>基隆美食抽抽樂</title>
+    <style type="text/css">
+        h1   { 
+		       font-family: verdana, helvetica, sans-serif;
+               color: red;
+          	   text-align: center;
+			   padding: .5em;
+			   border-style: groove;
+			 } 
+        body { 
+			background-image: url('background.png');
+			background-repeat:repeat;
+			background-color: lightgreen;
+		}
+        img {
+            width: 400px;
+            height: 400px;
+        }
+        
+        div {
+			height: 400px;
+			width: 40%;
+			float: left;
+			margin: 10px;			
+		}
+        
+        div.left {
+            color: darkblue;
+        }
+		
+		div.right {
+            
+			color: darkRed;
+			margin-top: 50px;
+			font-size: 25px;
+			
+        }
+
+
+	</style>
+    <script>
+        var accessoryNames = ["胡弄壽喜燒", "蒙古火鍋王", "苗圃義大利餐廳", "好居會甕仔雞", "大肥羊(基隆旗艦區)","洋城義大利餐廳","宣騰莊", "昱帝嶺餐廳", "涵舍婚宴會館美食餐廳", "木野和風家庭料理", "Casa Picasso", "相撲日式燒烤" ];
+		var fileNames = ["01.png", "02.png", "03.png", "04.png", "05.png","06.png","07.png","08.png","09.png", "10.png", "11.png", "12.png"];
+		var contrastphoto = ["01b.png", "02b.png", "03b.png", "04b.png", "05b.png","06b.png","07b.png","08b.png","09b.png", "10b.png", "11b.png", "12b.png"];
+		var storenames = ["胡弄壽喜燒", "蒙古火鍋王", "苗圃義大利餐廳", "好居會甕仔雞", "大肥羊(基隆旗艦區)","洋城義大利餐廳","宣騰莊","昱帝嶺餐廳", "涵舍婚宴會館美食餐廳", "木野和風家庭料理", "Casa Picasso", "相撲日式燒烤"];
+		var address = ["基隆市仁愛區愛二路45號","基隆市中正區信一路177號","基隆市信義區信二路172號","基隆市安樂區麥金路11巷1號","基隆市暖暖區八堵路193號", "基隆市中正區信二路290-1號", "基隆市七堵區開元路96號","基隆市中正區信一路177號", "基隆市安樂區麥金路82號", "基隆市安樂區安和一街2巷30號", "基隆市中正區中正路527號", "200基隆市仁愛區愛三路98巷8號" ];
+        var phone = [" 02 2425 1707", "02 2429 3456", "02 2425 2855", "02 2432 7275", "02 2455 2186", "02 2425 1758", "02 2455 7670", "02 2423 1590", "02 2433 6226", "02 2431 1037", "02 2463 3789", "02 2422 2595"];
+		var features = ["裝潢滿乾淨明亮的，位置也寬敞服務態度好，食物美味", "可以看得到基隆港美景的30樓景觀餐廳，而且一餐200內就可以解決，環境舒適", "Vivaio Pasta 苗圃不管是口味、裝潢或是各方面用心的程度，都不輸台北餐廳，口味真的都吃的出來是真材實料呢，而且份量也給的很足", "餐廳的海鮮不馬虎，很新鮮的食材很肥美的味道這餐真也適合家庭去", "價錢相對便宜，俗擱大碗湯頭是淡淡的中藥香，就淡淡的香氣。喜歡吃肉的人可以吃很飽", "環境乾淨，氣氛佳，服務好，食物美味，價錢划算", "提供的餐點相當豐富，價格也不會太貴。雖然有點像家庭式的餐館  但是菜色感覺可是一點都不輸給大餐廳而且份量還挺多的", "以新鮮為主原汁原味的美食餐廳，平價的價格，專業貼心的服務享譽全台。除了著名的海鮮筵席，目前亦推出頂級個人套餐，讓少人數或個人的您，也能盡情隨時享受頂級海鮮美食，味道也很好，是很好的餐廳～", "基隆相對平價的婚宴場地食物美味，環境舒適，一通電話也有年夜菜，雖然是不起眼的餐廳但食物令人讚不覺口", "木野的料理口味真的比較家庭，沒有讓人驚艷，但也不會難吃這樣，用餐時間生意不錯呢，還有不少人來外帶炒飯炒麵，也有不少小家庭來用餐。", "casa Picasso是基隆難得一見的中高級餐廳  店老闆也是位畫家所以餐廳賣的不只是美食還有藝術從店裡的擺設到落地窗外的景色連成一氣說多有情調就多有情調想要嘗鮮或特殊節日或想放鬆心情  都很適合來吃吃喔", "品質也很不錯肉質比起吃到飽好多了肉質好，美味多汁，服務態度好～價錢合理，裝潢不錯蠻適合家庭大大小小去"];
+		var selectedAccessory = -1;
+
+		function start() {
+            var playButton = document.getElementById("play");
+            playButton.addEventListener("click", play, false);
+        }
+        
+		function play() {
+            document.getElementById("accessory").src = "blank.png"; 
+            document.getElementById("messages").innerHTML = ""; 
+			
+            selectedAccessory = Math.floor(Math.random() * accessoryNames.length); 
+            console.log("Selected accessory Number: " + selectedAccessory);
+			
+			var sound = document.getElementById("sound");
+            sound.play();
+			
+			window.setTimeout(display2, 3500); 
+        }
+		
+		function display1() {
+			var picFile = fileNames[selectedAccessory]; 
+			document.getElementById("accessory").src = picFile;
+			var a = phone[selectedAccessory]; 
+            var b = address[selectedAccessory]; 
+            var c = features[selectedAccessory]; 
+			var d = storenames[selectedAccessory];
+			var displayString = "您抽到了" + accessoryNames[selectedAccessory] + "!"; 
+            document.getElementById("messages").innerHTML = displayString ;	
+			document.getElementById("info").innerHTML = "<h3>店名:"+d+"</h3><h3>電話:"+a+"</h3><h3>住址:"+b+"</h3><h3>特色:"+c+"</h3>";
+			window.setTimeout(display2, 2000); 
+			
+		}
+		function display2() {
+			var picFile2 = contrastphoto[selectedAccessory]; 
+			document.getElementById("accessory").src = picFile2;
+			var a = phone[selectedAccessory]; 
+            var b = address[selectedAccessory]; 
+            var c = features[selectedAccessory]; 
+			var d = storenames[selectedAccessory];
+			var displayString = "您抽到了" + accessoryNames[selectedAccessory] + "!"; 
+            document.getElementById("messages").innerHTML = displayString ;	
+			document.getElementById("info").innerHTML = "<h3>店名:"+d+"</h3><h3>電話:"+a+"</h3><h3>住址:"+b+"</h3><h3>特色:"+c+"</h3>";
+			
+			window.setTimeout(display1, 2000); 
+			
+		}
+
+        window.addEventListener("load", start, false);
+    </script>
+</head>
+
+    
+	<h1>基隆美食抽抽樂</h1>
+
+    <audio id="sound" preload="auto">
+         <source src = "doraemon.mp3"
+            type = "audio/mpeg">
+         Browser does not support audio tag</audio>
+
+    <div class="left">
+		<img id="accessory" src="blank.png" alt="accessory">
+		<form action="#">
+			<P><input id="play" type="button" style="width:300px; height:50px; border:3px red double; font-size: 16px"  value="抽取基隆人氣美食!"></P>
+		</form>
+		<p id="messages" class="red" style="font-size:20px;">請按下Button抽取基隆人氣美食</p>
+	</div>
+	<div class="right" id="info">
+    </div>
+</body>
+
+</html>

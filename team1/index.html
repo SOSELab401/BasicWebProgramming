@@ -1,0 +1,175 @@
+<html>
+  <meta charset = "utf-8">
+     <title>final work</title>	 
+       <link href="css/style.css" rel="stylesheet" type="text/css" />     <!-- 轉場動畫css -->
+       <link href="css/animation.css" rel="stylesheet" type="text/css" /> <!-- 區塊移動動畫css -->
+       <link href="css/henry.css" rel="stylesheet" type="text/css" />     <!-- 字型css -->
+       <link href="css/jquery.css" rel="stylesheet" type="text/css" />    <!-- jqiery css -->
+      
+         <head>      
+            <script src = "js/final work1.js"></script>  <!--隨機超連結 js -->                  
+	        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script><!--jquery js(取自w3school) -->	  	  
+         </head>
+   
+         <script> 
+             $(document).ready(function(){
+             $("#flip").click(function(){
+             $("#panel").slideToggle("slow");
+             });
+             });     <!--標題的jquery -->
+  
+             $(document).ready(function(){
+             $("button").click(function(){
+             $("#div1").fadeToggle();
+             $("#div2").fadeToggle(1000);
+             $("#div3").fadeToggle(1500);
+		     $("#div4").fadeToggle(2000);
+		     $("#div5").fadeToggle(2500);
+             });
+             });    <!--hello區塊的jquery -->
+         </script>
+   
+         <style>
+         .b{ width:165px;
+		 width:250px;
+         height:35px;		  
+	     position:fixed ;
+         left: 1000px;
+         top:  1050px;
+	     background:orange;
+	     font-size:18px;
+	     color:white;	  	  
+	      }<!-- play按鈕的class -->	
+		  
+		
+		 
+         </style>
+   
+    	
+         <body>
+            <video id="a14" playsinline autoplay muted loop>
+            <source src="video3.mp4" type="video/mp4">  <!-- 背景 -->	    
+            </video>
+
+    
+	
+            <div id="a1" class="c">基</div>
+            <div id="a2" class="c">隆</div>
+            <div id="a3" class="c">旅</div>
+            <div id="a4" class="c">遊</div>
+            <div id="a5" class="c">點</div> 
+            <!-- 動畫區塊 -->
+	  
+            <div id="flip"><em><strong>基隆風景點點樂</strong><em></div>
+            <div id="panel">WELLCOME</div> 
+            <!-- 標題jquery區塊 -->
+	 
+	 
+	 
+            <div class="mask1">
+               <div class="boxWrap">
+                  <div "class="box1">
+                     <img src="images/a1.jpg" width="250" height="183"  />       
+                  </div>		
+                  <div class="box2">
+                     <h1>星空草原</h1>
+                     <p>good</p>
+                     <a href="http://www.starryparadise.com/">點我去</a>
+                 </div>
+	          </div>
+	        </div>                 <!-- 轉場區塊1 -->
+
+	  
+	        <div  class="mask2">
+               <div  class="boxWrap">
+                  <div class="box3">
+                    <img src="images/a2.jpg" width="250" height="183"  />       
+                  </div>		
+                  <div class="box4">
+                    <h1>海科館</h1>
+                    <p>good</p>
+                    <a href="http://www.nmmst.gov.tw/chhtml/">點我去</a>
+                  </div>
+	           </div>
+	        </div>                <!-- 轉場區塊2 -->
+
+	  
+	        <div class="mask3">
+               <div class="boxWrap">
+                  <div "class="box5">
+                     <img src="images/a3.jpg" width="250" height="183"  />       
+                  </div>		
+                  <div class="box6">
+                     <h1>和平島</h1>
+                     <p>good</p>
+                     <a href="http://www.tonyhuang39.com/tony/tony1223.html">點我去</a>
+                  </div>
+	           </div>
+	        </div>	            <!-- 轉場區塊3 -->
+		
+		
+	        <div class="mask4">
+               <div class="boxWrap">
+                  <div class="box7">
+                     <img src="images/a4.png" width="250" height="183"  />       
+                  </div>		
+                  <div  class="box8">
+                     <h1>潮境公園</h1>
+                     <p>good</p>
+                     <a href="http://okgo.tw/butyview.html?id=2763">點我去</a>
+                  </div>
+	           </div>
+	        </div>	            <!-- 轉場區塊4 -->
+
+	
+	        <div class="mask5">
+               <div class="boxWrap">
+                  <div class="box9">
+                     <img src="images/a5.jpg" width="250" height="183"  />       
+                  </div>		
+                  <div class="box10">
+                     <h1>外木山</h1>
+                     <p>good</p>
+                     <a href="http://www.tonyhuang39.com/tony0285.html">點我去</a>
+                  </div>
+	           </div>
+	        </div>	            <!-- 轉場區塊5 -->
+	   
+	 
+   <p id="a7">歡迎來到我們的網站<br>我們設計了<strong><em><span style="color:chocolate">五個基隆風景區</span></strong></em>，網頁上有許多按鈕，試試看吧~~<br>ps.(標題也可以點哦~再點一次標題可以關掉區塊)</p>
+   
+  
+	   <nav>keelung landscape
+         <ul>
+            <li><a href = "http://okgo.tw/butyview.html?id=2763">潮境公園</a></li>
+            <li><a href = "http://www.nmmst.gov.tw/chhtml/">海洋科學博物館</a></li>
+            <li><a href = "http://www.starryparadise.com/">星空草原</a></li>
+            <li><a href = "http://www.tonyhuang39.com/tony/tony1223.html">和平島</a></li>
+            <li><a href = "http://www.tonyhuang39.com/tony0285.html">外木山</a></li>
+         </ul>
+      </nav>
+	  <p id="a12">↑↑直接選↑↑</p>
+	  
+	  <input id="displayButton1" type="button" class="b"	onclick="start()" value=" play it!!!!">
+	  <p id="a13">↑↑幫你選↑↑</p>
+	  <!-- 按鈕 -->
+	  
+	  
+	  
+	  
+	  <p id="a11">by:程式設計</p>
+	  
+	   
+	   
+	  <button id="divbutton">open/close</button><br><br>
+	  <div id="div1">H</div>
+      <br>
+      <div id="div2">E</div>
+      <br>
+      <div id="div3">L</div>
+	  <br>
+      <div id="div4">L</div>
+	  <br>
+      <div id="div5">O</div>
+   </body>
+</html>
